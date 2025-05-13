@@ -1,0 +1,62 @@
+Epoch 0 out of 30
+Training Epoch 0:  16%|██████████                                                     | 50/313 [00:07<00:38,  6.79it/s]
+Traceback (most recent call last):
+  File "C:\Users\annal\Github\DLfVC\assignment_1\train_resnet18.py", line 115, in <module>
+    train(args)
+    ~~~~~^^^^^^
+  File "C:\Users\annal\Github\DLfVC\assignment_1\train_resnet18.py", line 97, in train
+    trainer.train()
+    ~~~~~~~~~~~~~^^
+  File "C:\Users\annal\Github\DLfVC\assignment_1\assignment_1_code\trainer.py", line 189, in train
+    train_loss, train_acc, train_pc_acc = self._train_epoch(epoch)
+                                          ~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\annal\Github\DLfVC\assignment_1\assignment_1_code\trainer.py", line 123, in _train_epoch
+    for batch in tqdm(self.train_loader, desc=f"Training Epoch {epoch_idx}"): #some ui to see progress
+                 ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\annal\Github\DLfVC\assignment_1\newenvGPU\Lib\site-packages\tqdm\std.py", line 1181, in __iter__
+    for obj in iterable:
+               ^^^^^^^^
+  File "C:\Users\annal\Github\DLfVC\assignment_1\newenvGPU\Lib\site-packages\torch\utils\data\dataloader.py", line 733, in __next__
+    data = self._next_data()
+  File "C:\Users\annal\Github\DLfVC\assignment_1\newenvGPU\Lib\site-packages\torch\utils\data\dataloader.py", line 789, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+  File "C:\Users\annal\Github\DLfVC\assignment_1\newenvGPU\Lib\site-packages\torch\utils\data\_utils\fetch.py", line 52, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+            ~~~~~~~~~~~~^^^^^
+  File "C:\Users\annal\Github\DLfVC\assignment_1\assignment_1_code\datasets\cifar10.py", line 112, in __getitem__
+    image = self.transform(image)
+  File "C:\Users\annal\Github\DLfVC\assignment_1\newenvGPU\Lib\site-packages\torch\nn\modules\module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\annal\Github\DLfVC\assignment_1\newenvGPU\Lib\site-packages\torch\nn\modules\module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\annal\Github\DLfVC\assignment_1\newenvGPU\Lib\site-packages\torchvision\transforms\v2\_container.py", line 51, in forward
+    outputs = transform(*inputs)
+  File "C:\Users\annal\Github\DLfVC\assignment_1\newenvGPU\Lib\site-packages\torch\nn\modules\module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\annal\Github\DLfVC\assignment_1\newenvGPU\Lib\site-packages\torch\nn\modules\module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\annal\Github\DLfVC\assignment_1\newenvGPU\Lib\site-packages\torchvision\transforms\v2\_transform.py", line 69, in forward
+    self.transform(inpt, params) if needs_transform else inpt
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Users\annal\Github\DLfVC\assignment_1\newenvGPU\Lib\site-packages\torchvision\transforms\v2\_geometry.py", line 627, in transform
+    return self._call_kernel(
+           ~~~~~~~~~~~~~~~~~^
+        F.rotate,
+        ^^^^^^^^^
+    ...<5 lines>...
+        fill=fill,
+        ^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\annal\Github\DLfVC\assignment_1\newenvGPU\Lib\site-packages\torchvision\transforms\v2\_transform.py", line 49, in _call_kernel
+    return kernel(inpt, *args, **kwargs)
+  File "C:\Users\annal\Github\DLfVC\assignment_1\newenvGPU\Lib\site-packages\torchvision\transforms\v2\functional\_utils.py", line 31, in wrapper
+    output = kernel(inpt.as_subclass(torch.Tensor), *args, **kwargs)
+  File "C:\Users\annal\Github\DLfVC\assignment_1\newenvGPU\Lib\site-packages\torchvision\transforms\v2\functional\_geometry.py", line 1039, in rotate_image
+    return _apply_grid_transform(image, grid, interpolation.value, fill=fill)
+  File "C:\Users\annal\Github\DLfVC\assignment_1\newenvGPU\Lib\site-packages\torchvision\transforms\v2\functional\_geometry.py", line 609, in _apply_grid_transform
+    float_img = img if fp else img.to(grid.dtype)
+                               ~~~~~~^^^^^^^^^^^^
+KeyboardInterrupt

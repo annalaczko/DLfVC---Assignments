@@ -96,8 +96,14 @@ class ImgClassificationTrainer(BaseTrainer):
         self.training_save_dir = training_save_dir
         self.batch_size = batch_size
         self.val_frequency = val_frequency
+
+        #unique id for run
+        model_name = model.net.__class__.__name__
+        unique_id = str(id(model))[-6:]
+        
+        run_name = f"{model_name}_{unique_id}"
                                    
-        self.wandb_logger = WandBLogger() if hasattr(WandBLogger, "log") else None
+        self.wandb_logger = WandBLogger(run_name=run_name) if hasattr(WandBLogger, "log") else None
 
         self.train_loader = torch.utils.data.DataLoader(train_data, batch_size=batch_size, shuffle=True)
         self.val_loader = torch.utils.data.DataLoader(val_data, batch_size=batch_size, shuffle=False)
@@ -111,27 +117,29 @@ class ImgClassificationTrainer(BaseTrainer):
         epoch_idx (int): Current epoch number
         """
         self.model.train()
-        self.train_metric.reset()
+        self.train_metric.reset() #reset metrics
 
         total_loss = 0.0
-        for batch in tqdm(self.train_loader, desc=f"Training Epoch {epoch_idx}"):
+        for batch in tqdm(self.train_loader, desc=f"Training Epoch {epoch_idx}"): #some ui to see progress
             images, labels = batch[0].to(self.device), batch[1].to(self.device)
 
-            self.optimizer.zero_grad()
-            outputs = self.model(images)
-            loss = self.loss_fn(outputs, labels)
-            loss.backward()
-            self.optimizer.step()
+            self.optimizer.zero_grad() #reset gradients from other batches
+            outputs = self.model(images) #pred
+            loss = self.loss_fn(outputs, labels) #compute loss
+            loss.backward() #accumulate loss
+            self.optimizer.step() #update weights
 
-            self.train_metric.update(outputs, labels)
-            total_loss += loss.item()
+            self.train_metric.update(outputs, labels) #update metrics with new results
+            total_loss += loss.item() #add loss
 
         avg_loss = total_loss / len(self.train_loader)
 
+        print(f"\nEPOCH: {epoch_idx}")
         print(f"Loss: {avg_loss:.4f}")
-        print(str(train_metric))
+        print(str(self.train_metric))
+        print()
 
-        return avg_loss, train_metric.accuracy(), train_metric.per_class_accuracy()
+        return avg_loss, self.train_metric.accuracy(), self.train_metric.per_class_accuracy()
 
 
     def _val_epoch(self, epoch_idx: int) -> Tuple[float, float, float]:
@@ -142,28 +150,29 @@ class ImgClassificationTrainer(BaseTrainer):
 
         epoch_idx (int): Current epoch number
         """
-        self.model.eval()
-        self.val_metric.reset()
+        self.model.eval() #validation/test mode
+        self.val_metric.reset() #reset metrics
 
         total_loss = 0.0
 
-        with torch.no_grad():
+        with torch.no_grad(): #no gradient now, only eval
             for batch in tqdm(self.val_loader, desc=f"Validation Epoch {epoch_idx}"):
                 images, labels = batch[0].to(self.device), batch[1].to(self.device)
     
                 outputs = self.model(images)
                 loss = self.loss_fn(outputs, labels)
     
-                self.val_metric.update(outputs, labels)
+                self.val_metric.update(outputs, labels) #updating metrics
                 total_loss += loss.item()
 
         avg_loss = total_loss / len(self.val_loader)
 
-        print(f"EPOCH {epoch_idx}")
+        print(f"\nEPOCH: {epoch_idx}")
         print(f"Loss: {avg_loss:.4f}")
-        print(str(val_metric))
-
-        return avg_loss, val_metric.accuracy(), val_metric.per_class_accuracy()
+        print(str(self.val_metric))
+        print()
+        
+        return avg_loss, self.val_metric.accuracy(), self.val_metric.per_class_accuracy()
 
     def train(self) -> None:
         """
@@ -173,27 +182,37 @@ class ImgClassificationTrainer(BaseTrainer):
         than currently saved best mean per class accuracy.
         Depending on the val_frequency parameter, validation is not performed every epoch.
         """
-        for epoch in range(1, self.num_epochs + 1):
-            print(f"\n=== Epoch {epoch}/{self.num_epochs} ===")
+        best_pc_acc = 0.0
+        
+        for epoch in range(self.num_epochs):
+            print(f"Epoch {epoch} out of {self.num_epochs}")
             train_loss, train_acc, train_pc_acc = self._train_epoch(epoch)
-    
-            if epoch % self.val_frequency == 0 or epoch == self.num_epochs:
+
+            #logging for train
+            if self.wandb_logger:
+                self.wandb_logger.log({
+                    "epoch": epoch,
+                    "train_loss": train_loss,
+                    "train_acc": train_acc,
+                    "train_pc_acc": train_pc_acc,
+                })
+
+
+            if epoch % self.val_frequency == 0: #only val if frequency is reached
                 val_loss, val_acc, val_pc_acc = self._val_epoch(epoch)
-    
-                # Log to wandb if available
+
+                #logging for validation
                 if self.wandb_logger:
                     self.wandb_logger.log({
                         "epoch": epoch,
-                        "train_loss": train_loss,
-                        "train_acc": train_acc,
-                        "train_pc_acc": train_pc_acc,
                         "val_loss": val_loss,
                         "val_acc": val_acc,
                         "val_pc_acc": val_pc_acc,
                     })
-    
-                # Save model if per-class accuracy improves
+
+                #checking result, saving best model if found
                 if val_pc_acc > best_pc_acc:
-                    print(f"New best model found (mPCAcc: {val_pc_acc:.4f}), saving...")
-                    self.model.save(self.training_save_dir, suffix="best")
+                    print(f"New best model found, val_acc is: {val_pc_acc:.4f})")
+                    self.model.save(self.training_save_dir, suffix=type(self.model.net).__name__)
+                    print(f"New best model saved\n")
                     best_pc_acc = val_pc_acc

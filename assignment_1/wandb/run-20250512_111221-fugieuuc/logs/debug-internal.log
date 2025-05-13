@@ -1,0 +1,15 @@
+{"time":"2025-05-12T11:12:21.9739917+02:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"C:\\Users\\annal\\Github\\DLfVC\\assignment_1\\wandb\\run-20250512_111221-fugieuuc\\logs\\debug-core.log"}
+{"time":"2025-05-12T11:12:22.4706764+02:00","level":"INFO","msg":"created new stream","id":"fugieuuc"}
+{"time":"2025-05-12T11:12:22.471748+02:00","level":"INFO","msg":"stream: started","id":"fugieuuc"}
+{"time":"2025-05-12T11:12:22.471748+02:00","level":"INFO","msg":"handler: started","stream_id":"fugieuuc"}
+{"time":"2025-05-12T11:12:22.4730158+02:00","level":"INFO","msg":"writer: Do: started","stream_id":"fugieuuc"}
+{"time":"2025-05-12T11:12:22.4730158+02:00","level":"INFO","msg":"sender: started","stream_id":"fugieuuc"}
+{"time":"2025-05-12T11:12:22.8467466+02:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-05-12T11:20:08.3750874+02:00","level":"INFO","msg":"stream: closing","id":"fugieuuc"}
+{"time":"2025-05-12T11:20:08.3758634+02:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-05-12T11:20:08.3758634+02:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-05-12T11:20:09.1020378+02:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-05-12T11:20:09.3286311+02:00","level":"INFO","msg":"handler: closed","stream_id":"fugieuuc"}
+{"time":"2025-05-12T11:20:09.3286311+02:00","level":"INFO","msg":"sender: closed","stream_id":"fugieuuc"}
+{"time":"2025-05-12T11:20:09.3286311+02:00","level":"INFO","msg":"writer: Close: closed","stream_id":"fugieuuc"}
+{"time":"2025-05-12T11:20:09.3291914+02:00","level":"INFO","msg":"stream: closed","id":"fugieuuc"}

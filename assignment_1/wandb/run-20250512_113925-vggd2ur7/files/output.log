@@ -1,0 +1,317 @@
+Epoch 0 out of 30
+Training Epoch 0: 100%|██████████████████████████████████████████████████████████████| 313/313 [00:15<00:00, 20.71it/s]
+
+EPOCH: 0
+Loss: 1.1152
+Accuracy:0.6500,
+Per-class Accuracy:0.6500
+Validation Epoch 0: 100%|██████████████████████████████████████████████████████████████| 79/79 [00:02<00:00, 29.25it/s]
+
+
+EPOCH: 0
+Loss: 0.7677
+Accuracy:0.7427,
+Per-class Accuracy:0.7421
+
+New best model found, val_acc is: 0.7421)
+New best model saved
+
+Epoch 1 out of 30
+Training Epoch 1: 100%|██████████████████████████████████████████████████████████████| 313/313 [00:14<00:00, 21.74it/s]
+
+EPOCH: 1
+Loss: 0.6150
+Accuracy:0.7955,
+Per-class Accuracy:0.7955
+
+Epoch 2 out of 30
+Training Epoch 2: 100%|██████████████████████████████████████████████████████████████| 313/313 [00:14<00:00, 21.62it/s]
+
+EPOCH: 2
+Loss: 0.4813
+Accuracy:0.8375,
+Per-class Accuracy:0.8375
+
+Epoch 3 out of 30
+Training Epoch 3: 100%|██████████████████████████████████████████████████████████████| 313/313 [00:14<00:00, 21.70it/s]
+
+EPOCH: 3
+Loss: 0.3654
+Accuracy:0.8760,
+Per-class Accuracy:0.8760
+
+Epoch 4 out of 30
+Training Epoch 4: 100%|██████████████████████████████████████████████████████████████| 313/313 [00:14<00:00, 21.70it/s]
+
+EPOCH: 4
+Loss: 0.2914
+Accuracy:0.9010,
+Per-class Accuracy:0.9009
+
+Epoch 5 out of 30
+Training Epoch 5: 100%|██████████████████████████████████████████████████████████████| 313/313 [00:14<00:00, 21.43it/s]
+
+EPOCH: 5
+Loss: 0.2341
+Accuracy:0.9208,
+Per-class Accuracy:0.9208
+Validation Epoch 5: 100%|██████████████████████████████████████████████████████████████| 79/79 [00:02<00:00, 28.64it/s]
+
+
+EPOCH: 5
+Loss: 0.6799
+Accuracy:0.7998,
+Per-class Accuracy:0.7992
+
+New best model found, val_acc is: 0.7992)
+New best model saved
+
+Epoch 6 out of 30
+Training Epoch 6: 100%|██████████████████████████████████████████████████████████████| 313/313 [00:14<00:00, 21.58it/s]
+
+EPOCH: 6
+Loss: 0.1800
+Accuracy:0.9391,
+Per-class Accuracy:0.9391
+
+Epoch 7 out of 30
+Training Epoch 7: 100%|██████████████████████████████████████████████████████████████| 313/313 [00:14<00:00, 21.43it/s]
+
+EPOCH: 7
+Loss: 0.1524
+Accuracy:0.9483,
+Per-class Accuracy:0.9483
+
+Epoch 8 out of 30
+Training Epoch 8: 100%|██████████████████████████████████████████████████████████████| 313/313 [00:14<00:00, 21.48it/s]
+
+EPOCH: 8
+Loss: 0.1193
+Accuracy:0.9597,
+Per-class Accuracy:0.9597
+
+Epoch 9 out of 30
+Training Epoch 9: 100%|██████████████████████████████████████████████████████████████| 313/313 [00:14<00:00, 21.00it/s]
+
+EPOCH: 9
+Loss: 0.1059
+Accuracy:0.9634,
+Per-class Accuracy:0.9634
+
+Epoch 10 out of 30
+Training Epoch 10: 100%|█████████████████████████████████████████████████████████████| 313/313 [00:14<00:00, 21.56it/s]
+
+EPOCH: 10
+Loss: 0.0920
+Accuracy:0.9677,
+Per-class Accuracy:0.9677
+Validation Epoch 10: 100%|█████████████████████████████████████████████████████████████| 79/79 [00:02<00:00, 29.12it/s]
+
+
+EPOCH: 10
+Loss: 0.8085
+Accuracy:0.8046,
+Per-class Accuracy:0.8047
+
+New best model found, val_acc is: 0.8047)
+New best model saved
+
+Epoch 11 out of 30
+Training Epoch 11: 100%|█████████████████████████████████████████████████████████████| 313/313 [00:14<00:00, 21.13it/s]
+
+EPOCH: 11
+Loss: 0.0758
+Accuracy:0.9739,
+Per-class Accuracy:0.9739
+
+Epoch 12 out of 30
+Training Epoch 12: 100%|█████████████████████████████████████████████████████████████| 313/313 [00:14<00:00, 21.37it/s]
+
+EPOCH: 12
+Loss: 0.0682
+Accuracy:0.9762,
+Per-class Accuracy:0.9762
+
+Epoch 13 out of 30
+Training Epoch 13: 100%|█████████████████████████████████████████████████████████████| 313/313 [00:14<00:00, 21.73it/s]
+
+EPOCH: 13
+Loss: 0.0570
+Accuracy:0.9804,
+Per-class Accuracy:0.9804
+
+Epoch 14 out of 30
+Training Epoch 14: 100%|█████████████████████████████████████████████████████████████| 313/313 [00:14<00:00, 21.34it/s]
+
+EPOCH: 14
+Loss: 0.0525
+Accuracy:0.9821,
+Per-class Accuracy:0.9821
+
+Epoch 15 out of 30
+Training Epoch 15: 100%|█████████████████████████████████████████████████████████████| 313/313 [00:14<00:00, 21.41it/s]
+
+EPOCH: 15
+Loss: 0.0449
+Accuracy:0.9846,
+Per-class Accuracy:0.9846
+Validation Epoch 15: 100%|█████████████████████████████████████████████████████████████| 79/79 [00:02<00:00, 29.25it/s]
+
+
+EPOCH: 15
+Loss: 0.8098
+Accuracy:0.8162,
+Per-class Accuracy:0.8166
+
+New best model found, val_acc is: 0.8166)
+New best model saved
+
+Epoch 16 out of 30
+Training Epoch 16: 100%|█████████████████████████████████████████████████████████████| 313/313 [00:14<00:00, 21.66it/s]
+
+EPOCH: 16
+Loss: 0.0407
+Accuracy:0.9871,
+Per-class Accuracy:0.9871
+
+Epoch 17 out of 30
+Training Epoch 17: 100%|█████████████████████████████████████████████████████████████| 313/313 [00:14<00:00, 21.75it/s]
+
+EPOCH: 17
+Loss: 0.0415
+Accuracy:0.9863,
+Per-class Accuracy:0.9863
+
+Epoch 18 out of 30
+Training Epoch 18: 100%|█████████████████████████████████████████████████████████████| 313/313 [00:14<00:00, 21.27it/s]
+
+EPOCH: 18
+Loss: 0.0330
+Accuracy:0.9892,
+Per-class Accuracy:0.9892
+
+Epoch 19 out of 30
+Training Epoch 19: 100%|█████████████████████████████████████████████████████████████| 313/313 [00:15<00:00, 20.64it/s]
+
+EPOCH: 19
+Loss: 0.0311
+Accuracy:0.9897,
+Per-class Accuracy:0.9897
+
+Epoch 20 out of 30
+Training Epoch 20: 100%|█████████████████████████████████████████████████████████████| 313/313 [00:14<00:00, 21.22it/s]
+
+EPOCH: 20
+Loss: 0.0274
+Accuracy:0.9909,
+Per-class Accuracy:0.9909
+Validation Epoch 20: 100%|█████████████████████████████████████████████████████████████| 79/79 [00:02<00:00, 29.20it/s]
+
+
+EPOCH: 20
+Loss: 0.9066
+Accuracy:0.8171,
+Per-class Accuracy:0.8173
+
+New best model found, val_acc is: 0.8173)
+New best model saved
+
+Epoch 21 out of 30
+Training Epoch 21: 100%|█████████████████████████████████████████████████████████████| 313/313 [00:15<00:00, 20.76it/s]
+
+EPOCH: 21
+Loss: 0.0275
+Accuracy:0.9910,
+Per-class Accuracy:0.9910
+
+Epoch 22 out of 30
+Training Epoch 22: 100%|█████████████████████████████████████████████████████████████| 313/313 [00:14<00:00, 21.06it/s]
+
+EPOCH: 22
+Loss: 0.0241
+Accuracy:0.9918,
+Per-class Accuracy:0.9918
+
+Epoch 23 out of 30
+Training Epoch 23: 100%|█████████████████████████████████████████████████████████████| 313/313 [00:15<00:00, 19.74it/s]
+
+EPOCH: 23
+Loss: 0.0260
+Accuracy:0.9916,
+Per-class Accuracy:0.9915
+
+Epoch 24 out of 30
+Training Epoch 24: 100%|█████████████████████████████████████████████████████████████| 313/313 [00:15<00:00, 20.21it/s]
+
+EPOCH: 24
+Loss: 0.0222
+Accuracy:0.9926,
+Per-class Accuracy:0.9926
+
+Epoch 25 out of 30
+Training Epoch 25: 100%|█████████████████████████████████████████████████████████████| 313/313 [00:14<00:00, 20.93it/s]
+
+EPOCH: 25
+Loss: 0.0227
+Accuracy:0.9926,
+Per-class Accuracy:0.9925
+Validation Epoch 25: 100%|█████████████████████████████████████████████████████████████| 79/79 [00:02<00:00, 28.31it/s]
+
+
+EPOCH: 25
+Loss: 0.9643
+Accuracy:0.8107,
+Per-class Accuracy:0.8111
+
+Epoch 26 out of 30
+Training Epoch 26:  16%|█████████▋                                                    | 49/313 [00:02<00:12, 20.34it/s]
+Traceback (most recent call last):
+  File "C:\Users\annal\Github\DLfVC\assignment_1\train.py", line 97, in <module>
+    train(args)
+    ~~~~~^^^^^^
+  File "C:\Users\annal\Github\DLfVC\assignment_1\train.py", line 79, in train
+    trainer.train()
+    ~~~~~~~~~~~~~^^
+  File "C:\Users\annal\Github\DLfVC\assignment_1\assignment_1_code\trainer.py", line 183, in train
+    train_loss, train_acc, train_pc_acc = self._train_epoch(epoch)
+                                          ~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\annal\Github\DLfVC\assignment_1\assignment_1_code\trainer.py", line 117, in _train_epoch
+    for batch in tqdm(self.train_loader, desc=f"Training Epoch {epoch_idx}"): #some ui to see progress
+                 ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\annal\Github\DLfVC\assignment_1\newenvGPU\Lib\site-packages\tqdm\std.py", line 1181, in __iter__
+    for obj in iterable:
+               ^^^^^^^^
+  File "C:\Users\annal\Github\DLfVC\assignment_1\newenvGPU\Lib\site-packages\torch\utils\data\dataloader.py", line 733, in __next__
+    data = self._next_data()
+  File "C:\Users\annal\Github\DLfVC\assignment_1\newenvGPU\Lib\site-packages\torch\utils\data\dataloader.py", line 789, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+  File "C:\Users\annal\Github\DLfVC\assignment_1\newenvGPU\Lib\site-packages\torch\utils\data\_utils\fetch.py", line 52, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+            ~~~~~~~~~~~~^^^^^
+  File "C:\Users\annal\Github\DLfVC\assignment_1\assignment_1_code\datasets\cifar10.py", line 112, in __getitem__
+    image = self.transform(image)
+  File "C:\Users\annal\Github\DLfVC\assignment_1\newenvGPU\Lib\site-packages\torch\nn\modules\module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\annal\Github\DLfVC\assignment_1\newenvGPU\Lib\site-packages\torch\nn\modules\module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\annal\Github\DLfVC\assignment_1\newenvGPU\Lib\site-packages\torchvision\transforms\v2\_container.py", line 51, in forward
+    outputs = transform(*inputs)
+  File "C:\Users\annal\Github\DLfVC\assignment_1\newenvGPU\Lib\site-packages\torch\nn\modules\module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\annal\Github\DLfVC\assignment_1\newenvGPU\Lib\site-packages\torch\nn\modules\module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\annal\Github\DLfVC\assignment_1\newenvGPU\Lib\site-packages\torchvision\transforms\v2\_transform.py", line 69, in forward
+    self.transform(inpt, params) if needs_transform else inpt
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Users\annal\Github\DLfVC\assignment_1\newenvGPU\Lib\site-packages\torchvision\transforms\v2\_misc.py", line 165, in transform
+    return self._call_kernel(F.normalize, inpt, mean=self.mean, std=self.std, inplace=self.inplace)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\annal\Github\DLfVC\assignment_1\newenvGPU\Lib\site-packages\torchvision\transforms\v2\_transform.py", line 49, in _call_kernel
+    return kernel(inpt, *args, **kwargs)
+  File "C:\Users\annal\Github\DLfVC\assignment_1\newenvGPU\Lib\site-packages\torchvision\transforms\v2\functional\_utils.py", line 31, in wrapper
+    output = kernel(inpt.as_subclass(torch.Tensor), *args, **kwargs)
+  File "C:\Users\annal\Github\DLfVC\assignment_1\newenvGPU\Lib\site-packages\torchvision\transforms\v2\functional\_misc.py", line 56, in normalize_image
+    std = torch.as_tensor(std, dtype=dtype, device=device)
+KeyboardInterrupt

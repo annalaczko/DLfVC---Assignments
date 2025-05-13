@@ -1,0 +1,18 @@
+Epoch 0 out of 30
+Training Epoch 0:  38%|███████████████████████▊                                      | 120/313 [01:58<03:09,  1.02it/s]
+Traceback (most recent call last):
+  File "C:\Users\annal\Github\DLfVC\assignment_1\train.py", line 93, in <module>
+    train(args)
+    ~~~~~^^^^^^
+  File "C:\Users\annal\Github\DLfVC\assignment_1\train.py", line 77, in train
+    trainer.train()
+    ~~~~~~~~~~~~~^^
+  File "C:\Users\annal\Github\DLfVC\assignment_1\assignment_1_code\trainer.py", line 180, in train
+    train_loss, train_acc, train_pc_acc = self._train_epoch(epoch)
+                                          ~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\annal\Github\DLfVC\assignment_1\assignment_1_code\trainer.py", line 126, in _train_epoch
+    self.train_metric.update(outputs, labels)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\annal\Github\DLfVC\assignment_1\assignment_1_code\metrics.py", line 77, in update
+    true = true.item()
+KeyboardInterrupt

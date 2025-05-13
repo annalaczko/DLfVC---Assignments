@@ -54,9 +54,7 @@ class CIFAR10Dataset(ClassificationDataset):
         # TODO implement
         # See the CIFAR-10 website on how to load the data files
 
-        if not self.fdir.endswith("/"):
-                self.fdir += "/"
-        
+        #subsets
         if self.subset == Subset.TRAINING:
             files = [f"data_batch_{i}" for i in range(1, 5)]
         elif self.subset == Subset.VALIDATION:
@@ -64,27 +62,27 @@ class CIFAR10Dataset(ClassificationDataset):
         elif self.subset == Subset.TEST:
             files = ["test_batch"]
         else:
-            raise ValueError("Invalid subset specified.")
+            raise ValueError("Wrong Subset type")
     
         all_images = []
         all_labels = []
     
         for filename in files:
-            filepath = self.fdir + filename
+            filepath = self.fdir / filename
+
             try:
                 with open(filepath, 'rb') as f:
                     batch = pickle.load(f, encoding='bytes')
                     images_flat = batch[b'data']
                     labels = batch[b'labels']
     
-                    images = images_flat.reshape(-1, 3, 32, 32).transpose(0, 2, 3, 1)
+                    images = images_flat.reshape(-1, 3, 32, 32).transpose(0, 2, 3, 1) #reshape  to get the standard image format
                     all_images.append(images)
                     all_labels.extend(labels)
-            except FileNotFoundError:
-                raise ValueError(f"Missing file or invalid directory: {filepath}")
-            except Exception as e:
-                raise ValueError(f"Error loading file {filepath}: {e}")
-    
+            except FileNotFoundError: #Raises ValueError if fdir is not a directory or if a file inside it is missing.
+                raise ValueError(f"Missing file or directory: {filepath}")
+
+        #get the intended output format
         images_array = np.concatenate(all_images, axis=0).astype(np.uint8)
         labels_array = np.array(all_labels, dtype=np.int64)
         return images_array, labels_array
@@ -119,4 +117,4 @@ class CIFAR10Dataset(ClassificationDataset):
         """
         Returns the number of classes.
         """
-        return len(np.unique(self.labels))
+        return len(self.classes)

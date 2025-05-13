@@ -1,0 +1,299 @@
+Epoch 0 out of 30
+Training Epoch 0: 100%|██████████████████████████████████████████████████████████████| 313/313 [00:13<00:00, 22.37it/s]
+
+EPOCH: 0
+Loss: 1.4530
+Accuracy:0.4951,
+Per-class Accuracy:0.4952
+Validation Epoch 0: 100%|██████████████████████████████████████████████████████████████| 79/79 [00:02<00:00, 30.81it/s]
+
+
+EPOCH: 0
+Loss: 1.1752
+Accuracy:0.5844,
+Per-class Accuracy:0.5846
+
+New best model found, val_acc is: 0.5846)
+New best model saved
+
+Epoch 1 out of 30
+Training Epoch 1: 100%|██████████████████████████████████████████████████████████████| 313/313 [00:13<00:00, 22.49it/s]
+
+EPOCH: 1
+Loss: 1.0015
+Accuracy:0.6470,
+Per-class Accuracy:0.6470
+
+Epoch 2 out of 30
+Training Epoch 2: 100%|██████████████████████████████████████████████████████████████| 313/313 [00:14<00:00, 22.35it/s]
+
+EPOCH: 2
+Loss: 0.8211
+Accuracy:0.7128,
+Per-class Accuracy:0.7128
+
+Epoch 3 out of 30
+Training Epoch 3: 100%|██████████████████████████████████████████████████████████████| 313/313 [00:13<00:00, 22.46it/s]
+
+EPOCH: 3
+Loss: 0.6977
+Accuracy:0.7530,
+Per-class Accuracy:0.7530
+
+Epoch 4 out of 30
+Training Epoch 4: 100%|██████████████████████████████████████████████████████████████| 313/313 [00:14<00:00, 22.26it/s]
+
+EPOCH: 4
+Loss: 0.5763
+Accuracy:0.7983,
+Per-class Accuracy:0.7983
+
+Epoch 5 out of 30
+Training Epoch 5: 100%|██████████████████████████████████████████████████████████████| 313/313 [00:13<00:00, 22.41it/s]
+
+EPOCH: 5
+Loss: 0.4727
+Accuracy:0.8341,
+Per-class Accuracy:0.8341
+Validation Epoch 5: 100%|██████████████████████████████████████████████████████████████| 79/79 [00:02<00:00, 29.92it/s]
+
+
+EPOCH: 5
+Loss: 0.8647
+Accuracy:0.7239,
+Per-class Accuracy:0.7238
+
+New best model found, val_acc is: 0.7238)
+New best model saved
+
+Epoch 6 out of 30
+Training Epoch 6: 100%|██████████████████████████████████████████████████████████████| 313/313 [00:14<00:00, 22.08it/s]
+
+EPOCH: 6
+Loss: 0.3903
+Accuracy:0.8620,
+Per-class Accuracy:0.8620
+
+Epoch 7 out of 30
+Training Epoch 7: 100%|██████████████████████████████████████████████████████████████| 313/313 [00:14<00:00, 21.80it/s]
+
+EPOCH: 7
+Loss: 0.3107
+Accuracy:0.8901,
+Per-class Accuracy:0.8901
+
+Epoch 8 out of 30
+Training Epoch 8: 100%|██████████████████████████████████████████████████████████████| 313/313 [00:14<00:00, 21.88it/s]
+
+EPOCH: 8
+Loss: 0.2484
+Accuracy:0.9114,
+Per-class Accuracy:0.9114
+
+Epoch 9 out of 30
+Training Epoch 9: 100%|██████████████████████████████████████████████████████████████| 313/313 [00:13<00:00, 22.44it/s]
+
+EPOCH: 9
+Loss: 0.1859
+Accuracy:0.9344,
+Per-class Accuracy:0.9344
+
+Epoch 10 out of 30
+Training Epoch 10: 100%|█████████████████████████████████████████████████████████████| 313/313 [00:14<00:00, 22.10it/s]
+
+EPOCH: 10
+Loss: 0.1511
+Accuracy:0.9465,
+Per-class Accuracy:0.9465
+Validation Epoch 10: 100%|█████████████████████████████████████████████████████████████| 79/79 [00:02<00:00, 31.35it/s]
+
+
+EPOCH: 10
+Loss: 1.1524
+Accuracy:0.7256,
+Per-class Accuracy:0.7254
+
+New best model found, val_acc is: 0.7254)
+New best model saved
+
+Epoch 11 out of 30
+Training Epoch 11: 100%|█████████████████████████████████████████████████████████████| 313/313 [00:14<00:00, 21.92it/s]
+
+EPOCH: 11
+Loss: 0.1282
+Accuracy:0.9539,
+Per-class Accuracy:0.9539
+
+Epoch 12 out of 30
+Training Epoch 12: 100%|█████████████████████████████████████████████████████████████| 313/313 [00:14<00:00, 22.31it/s]
+
+EPOCH: 12
+Loss: 0.0974
+Accuracy:0.9670,
+Per-class Accuracy:0.9670
+
+Epoch 13 out of 30
+Training Epoch 13: 100%|█████████████████████████████████████████████████████████████| 313/313 [00:14<00:00, 22.12it/s]
+
+EPOCH: 13
+Loss: 0.0934
+Accuracy:0.9677,
+Per-class Accuracy:0.9676
+
+Epoch 14 out of 30
+Training Epoch 14: 100%|█████████████████████████████████████████████████████████████| 313/313 [00:14<00:00, 21.21it/s]
+
+EPOCH: 14
+Loss: 0.0747
+Accuracy:0.9734,
+Per-class Accuracy:0.9734
+
+Epoch 15 out of 30
+Training Epoch 15: 100%|█████████████████████████████████████████████████████████████| 313/313 [00:14<00:00, 22.15it/s]
+
+EPOCH: 15
+Loss: 0.0636
+Accuracy:0.9779,
+Per-class Accuracy:0.9779
+Validation Epoch 15: 100%|█████████████████████████████████████████████████████████████| 79/79 [00:02<00:00, 30.22it/s]
+
+
+EPOCH: 15
+Loss: 1.3077
+Accuracy:0.7441,
+Per-class Accuracy:0.7444
+
+New best model found, val_acc is: 0.7444)
+New best model saved
+
+Epoch 16 out of 30
+Training Epoch 16: 100%|█████████████████████████████████████████████████████████████| 313/313 [00:14<00:00, 21.80it/s]
+
+EPOCH: 16
+Loss: 0.0519
+Accuracy:0.9819,
+Per-class Accuracy:0.9819
+
+Epoch 17 out of 30
+Training Epoch 17: 100%|█████████████████████████████████████████████████████████████| 313/313 [00:14<00:00, 22.15it/s]
+
+EPOCH: 17
+Loss: 0.0533
+Accuracy:0.9816,
+Per-class Accuracy:0.9816
+
+Epoch 18 out of 30
+Training Epoch 18: 100%|█████████████████████████████████████████████████████████████| 313/313 [00:14<00:00, 22.21it/s]
+
+EPOCH: 18
+Loss: 0.0345
+Accuracy:0.9888,
+Per-class Accuracy:0.9887
+
+Epoch 19 out of 30
+Training Epoch 19: 100%|█████████████████████████████████████████████████████████████| 313/313 [00:14<00:00, 21.92it/s]
+
+EPOCH: 19
+Loss: 0.0248
+Accuracy:0.9919,
+Per-class Accuracy:0.9918
+
+Epoch 20 out of 30
+Training Epoch 20: 100%|█████████████████████████████████████████████████████████████| 313/313 [00:14<00:00, 21.91it/s]
+
+EPOCH: 20
+Loss: 0.0362
+Accuracy:0.9882,
+Per-class Accuracy:0.9883
+Validation Epoch 20: 100%|█████████████████████████████████████████████████████████████| 79/79 [00:02<00:00, 30.31it/s]
+
+
+EPOCH: 20
+Loss: 1.4226
+Accuracy:0.7461,
+Per-class Accuracy:0.7464
+
+New best model found, val_acc is: 0.7464)
+New best model saved
+
+Epoch 21 out of 30
+Training Epoch 21: 100%|█████████████████████████████████████████████████████████████| 313/313 [00:13<00:00, 22.40it/s]
+
+EPOCH: 21
+Loss: 0.0370
+Accuracy:0.9869,
+Per-class Accuracy:0.9870
+
+Epoch 22 out of 30
+Training Epoch 22: 100%|█████████████████████████████████████████████████████████████| 313/313 [00:14<00:00, 22.22it/s]
+
+EPOCH: 22
+Loss: 0.0320
+Accuracy:0.9887,
+Per-class Accuracy:0.9887
+
+Epoch 23 out of 30
+Training Epoch 23: 100%|█████████████████████████████████████████████████████████████| 313/313 [00:13<00:00, 22.52it/s]
+
+EPOCH: 23
+Loss: 0.0252
+Accuracy:0.9917,
+Per-class Accuracy:0.9917
+
+Epoch 24 out of 30
+Training Epoch 24: 100%|█████████████████████████████████████████████████████████████| 313/313 [00:13<00:00, 22.66it/s]
+
+EPOCH: 24
+Loss: 0.0277
+Accuracy:0.9902,
+Per-class Accuracy:0.9902
+
+Epoch 25 out of 30
+Training Epoch 25: 100%|█████████████████████████████████████████████████████████████| 313/313 [00:13<00:00, 22.69it/s]
+
+EPOCH: 25
+Loss: 0.0189
+Accuracy:0.9933,
+Per-class Accuracy:0.9933
+Validation Epoch 25: 100%|█████████████████████████████████████████████████████████████| 79/79 [00:02<00:00, 29.78it/s]
+
+
+EPOCH: 25
+Loss: 1.4229
+Accuracy:0.7602,
+Per-class Accuracy:0.7603
+
+New best model found, val_acc is: 0.7603)
+New best model saved
+
+Epoch 26 out of 30
+Training Epoch 26: 100%|█████████████████████████████████████████████████████████████| 313/313 [00:13<00:00, 22.60it/s]
+
+EPOCH: 26
+Loss: 0.0069
+Accuracy:0.9980,
+Per-class Accuracy:0.9980
+
+Epoch 27 out of 30
+Training Epoch 27: 100%|█████████████████████████████████████████████████████████████| 313/313 [00:13<00:00, 22.71it/s]
+
+EPOCH: 27
+Loss: 0.0065
+Accuracy:0.9981,
+Per-class Accuracy:0.9981
+
+Epoch 28 out of 30
+Training Epoch 28: 100%|█████████████████████████████████████████████████████████████| 313/313 [00:13<00:00, 22.73it/s]
+
+EPOCH: 28
+Loss: 0.0029
+Accuracy:0.9993,
+Per-class Accuracy:0.9993
+
+Epoch 29 out of 30
+Training Epoch 29: 100%|█████████████████████████████████████████████████████████████| 313/313 [00:13<00:00, 22.81it/s]
+
+EPOCH: 29
+Loss: 0.0020
+Accuracy:0.9994,
+Per-class Accuracy:0.9994

@@ -1,0 +1,15 @@
+{"time":"2025-05-13T14:55:29.7892429+02:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"C:\\Users\\annal\\Github\\DLfVC\\assignment_1\\wandb\\run-20250513_145529-avelcdg9\\logs\\debug-core.log"}
+{"time":"2025-05-13T14:55:30.0965415+02:00","level":"INFO","msg":"created new stream","id":"avelcdg9"}
+{"time":"2025-05-13T14:55:30.0965415+02:00","level":"INFO","msg":"stream: started","id":"avelcdg9"}
+{"time":"2025-05-13T14:55:30.0965415+02:00","level":"INFO","msg":"writer: Do: started","stream_id":"avelcdg9"}
+{"time":"2025-05-13T14:55:30.0965415+02:00","level":"INFO","msg":"handler: started","stream_id":"avelcdg9"}
+{"time":"2025-05-13T14:55:30.0965415+02:00","level":"INFO","msg":"sender: started","stream_id":"avelcdg9"}
+{"time":"2025-05-13T14:55:30.4287664+02:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-05-13T15:02:49.0052637+02:00","level":"INFO","msg":"stream: closing","id":"avelcdg9"}
+{"time":"2025-05-13T15:02:49.0058097+02:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-05-13T15:02:49.0058097+02:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-05-13T15:02:50.0208243+02:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-05-13T15:02:50.245593+02:00","level":"INFO","msg":"handler: closed","stream_id":"avelcdg9"}
+{"time":"2025-05-13T15:02:50.245593+02:00","level":"INFO","msg":"writer: Close: closed","stream_id":"avelcdg9"}
+{"time":"2025-05-13T15:02:50.245593+02:00","level":"INFO","msg":"sender: closed","stream_id":"avelcdg9"}
+{"time":"2025-05-13T15:02:50.2463497+02:00","level":"INFO","msg":"stream: closed","id":"avelcdg9"}

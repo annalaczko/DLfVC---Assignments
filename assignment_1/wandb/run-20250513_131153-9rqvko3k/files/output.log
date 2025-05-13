@@ -1,0 +1,121 @@
+Epoch 0 out of 30
+Training Epoch 0: 100%|██████████████████████████████████████████████████████████████| 313/313 [00:14<00:00, 21.87it/s]
+
+EPOCH: 0
+Loss: 1.4758
+Accuracy:0.4885,
+Per-class Accuracy:0.4885
+Validation Epoch 0: 100%|██████████████████████████████████████████████████████████████| 79/79 [00:02<00:00, 30.83it/s]
+
+
+EPOCH: 0
+Loss: 1.2300
+Accuracy:0.5697,
+Per-class Accuracy:0.5682
+
+New best model found, val_acc is: 0.5682)
+New best model saved
+
+Epoch 1 out of 30
+Training Epoch 1: 100%|██████████████████████████████████████████████████████████████| 313/313 [00:14<00:00, 21.93it/s]
+
+EPOCH: 1
+Loss: 1.0408
+Accuracy:0.6321,
+Per-class Accuracy:0.6322
+
+Epoch 2 out of 30
+Training Epoch 2: 100%|██████████████████████████████████████████████████████████████| 313/313 [00:14<00:00, 22.24it/s]
+
+EPOCH: 2
+Loss: 0.8600
+Accuracy:0.6975,
+Per-class Accuracy:0.6975
+
+Epoch 3 out of 30
+Training Epoch 3: 100%|██████████████████████████████████████████████████████████████| 313/313 [00:14<00:00, 22.15it/s]
+
+EPOCH: 3
+Loss: 0.7138
+Accuracy:0.7498,
+Per-class Accuracy:0.7498
+
+Epoch 4 out of 30
+Training Epoch 4: 100%|██████████████████████████████████████████████████████████████| 313/313 [00:13<00:00, 22.73it/s]
+
+EPOCH: 4
+Loss: 0.5949
+Accuracy:0.7925,
+Per-class Accuracy:0.7925
+
+Epoch 5 out of 30
+Training Epoch 5: 100%|██████████████████████████████████████████████████████████████| 313/313 [00:13<00:00, 22.62it/s]
+
+EPOCH: 5
+Loss: 0.4909
+Accuracy:0.8271,
+Per-class Accuracy:0.8271
+Validation Epoch 5: 100%|██████████████████████████████████████████████████████████████| 79/79 [00:02<00:00, 31.25it/s]
+
+
+EPOCH: 5
+Loss: 0.8386
+Accuracy:0.7264,
+Per-class Accuracy:0.7261
+
+New best model found, val_acc is: 0.7261)
+New best model saved
+
+Epoch 6 out of 30
+Training Epoch 6:  20%|████████████▋                                                  | 63/313 [00:02<00:11, 22.39it/s]
+Traceback (most recent call last):
+  File "C:\Users\annal\Github\DLfVC\assignment_1\train_resnet18.py", line 106, in <module>
+    train(args)
+    ~~~~~^^^^^^
+  File "C:\Users\annal\Github\DLfVC\assignment_1\train_resnet18.py", line 88, in train
+    trainer.train()
+    ~~~~~~~~~~~~~^^
+  File "C:\Users\annal\Github\DLfVC\assignment_1\assignment_1_code\trainer.py", line 189, in train
+    train_loss, train_acc, train_pc_acc = self._train_epoch(epoch)
+                                          ~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\annal\Github\DLfVC\assignment_1\assignment_1_code\trainer.py", line 123, in _train_epoch
+    for batch in tqdm(self.train_loader, desc=f"Training Epoch {epoch_idx}"): #some ui to see progress
+                 ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\annal\Github\DLfVC\assignment_1\newenvGPU\Lib\site-packages\tqdm\std.py", line 1181, in __iter__
+    for obj in iterable:
+               ^^^^^^^^
+  File "C:\Users\annal\Github\DLfVC\assignment_1\newenvGPU\Lib\site-packages\torch\utils\data\dataloader.py", line 733, in __next__
+    data = self._next_data()
+  File "C:\Users\annal\Github\DLfVC\assignment_1\newenvGPU\Lib\site-packages\torch\utils\data\dataloader.py", line 789, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+  File "C:\Users\annal\Github\DLfVC\assignment_1\newenvGPU\Lib\site-packages\torch\utils\data\_utils\fetch.py", line 52, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+            ~~~~~~~~~~~~^^^^^
+  File "C:\Users\annal\Github\DLfVC\assignment_1\assignment_1_code\datasets\cifar10.py", line 112, in __getitem__
+    image = self.transform(image)
+  File "C:\Users\annal\Github\DLfVC\assignment_1\newenvGPU\Lib\site-packages\torch\nn\modules\module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\annal\Github\DLfVC\assignment_1\newenvGPU\Lib\site-packages\torch\nn\modules\module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\annal\Github\DLfVC\assignment_1\newenvGPU\Lib\site-packages\torchvision\transforms\v2\_container.py", line 51, in forward
+    outputs = transform(*inputs)
+  File "C:\Users\annal\Github\DLfVC\assignment_1\newenvGPU\Lib\site-packages\torch\nn\modules\module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\annal\Github\DLfVC\assignment_1\newenvGPU\Lib\site-packages\torch\nn\modules\module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\annal\Github\DLfVC\assignment_1\newenvGPU\Lib\site-packages\torchvision\transforms\v2\_transform.py", line 69, in forward
+    self.transform(inpt, params) if needs_transform else inpt
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Users\annal\Github\DLfVC\assignment_1\newenvGPU\Lib\site-packages\torchvision\transforms\v2\_misc.py", line 304, in transform
+    return self._call_kernel(F.to_dtype, inpt, dtype=dtype, scale=self.scale)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\annal\Github\DLfVC\assignment_1\newenvGPU\Lib\site-packages\torchvision\transforms\v2\_transform.py", line 49, in _call_kernel
+    return kernel(inpt, *args, **kwargs)
+  File "C:\Users\annal\Github\DLfVC\assignment_1\newenvGPU\Lib\site-packages\torchvision\transforms\v2\functional\_utils.py", line 31, in wrapper
+    output = kernel(inpt.as_subclass(torch.Tensor), *args, **kwargs)
+  File "C:\Users\annal\Github\DLfVC\assignment_1\newenvGPU\Lib\site-packages\torchvision\transforms\v2\functional\_misc.py", line 250, in to_dtype_image
+    @_register_kernel_internal(to_dtype, torch.Tensor)
+
+KeyboardInterrupt

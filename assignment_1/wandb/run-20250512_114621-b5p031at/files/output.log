@@ -1,0 +1,27 @@
+Epoch 0 out of 30
+Training Epoch 0: 100%|██████████████████████████████████████████████████████████████| 313/313 [00:16<00:00, 18.86it/s]
+
+EPOCH: 0
+Loss: 1.1454
+Accuracy:0.6444,
+Per-class Accuracy:0.6444
+Validation Epoch 0: 100%|██████████████████████████████████████████████████████████████| 79/79 [00:02<00:00, 28.74it/s]
+
+
+EPOCH: 0
+Loss: 0.7959
+Accuracy:0.7393,
+Per-class Accuracy:0.7396
+
+New best model found, val_acc is: 0.7396)
+Traceback (most recent call last):
+  File "C:\Users\annal\Github\DLfVC\assignment_1\train.py", line 97, in <module>
+    train(args)
+    ~~~~~^^^^^^
+  File "C:\Users\annal\Github\DLfVC\assignment_1\train.py", line 79, in train
+    trainer.train()
+    ~~~~~~~~~~~~~^^
+  File "C:\Users\annal\Github\DLfVC\assignment_1\assignment_1_code\trainer.py", line 210, in train
+    self.model.save(self.training_save_dir, suffix=type(model).__name__)
+                                                        ^^^^^
+NameError: name 'model' is not defined. Did you mean: 'self.model'?

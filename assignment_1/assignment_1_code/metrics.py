@@ -60,17 +60,23 @@ class Accuracy(PerformanceMeasure):
         Raises ValueError if the data shape or values are unsupported.
         [len(prediction.shape) should be equal to 2, and len(target.shape) should be equal to 1.]
         """
-
-        if not isinstance(prediction, torch.Tensor) or not isinstance(target, torch.Tensor):
-            raise ValueError("Prediction and target are not tensors")
-
-        if len(prediction.shape) != 2 or len(target.shape) != 1:
+        
+        ## prediction must have shape (batchsize,n_classes)
+        if len(prediction.shape) != 2:
             raise ValueError("Invalid input tensor shapes.")
+        ##
+        
+        ##target must have shape (batchsize,) and values between 0 and c-1 (true class labels)
+        if len(target.shape) != 1:
+            raise ValueError("Target must be a 1D tensor of shape (batchsize,).")
+        
+        n_classes = prediction.shape[1]
+        if not torch.all((target >= 0) & (target < n_classes)):
+            raise ValueError(f"Target values must be between 0 and {n_classes - 1}.")
+        ##
 
-        if prediction.shape[0] != target.shape[0]:
-            raise ValueError("Target and Prediction length is not the same")
 
-        pred_labels = prediction.argmax(dim=1)
+        pred_labels = prediction.argmax(dim=1) #find predicted class
 
         for pred, true in zip(pred_labels, target):
             pred = pred.item()
@@ -87,7 +93,7 @@ class Accuracy(PerformanceMeasure):
         Return a string representation of the performance, accuracy and per class accuracy.
         """
 
-        return f"Accuracy: {self.accuracy():.4f},\nPer-class Accuracy: {self.per_class_accuracy():.4f}"
+        return f"Accuracy:{self.accuracy():.4f},\nPer-class Accuracy:{self.per_class_accuracy():.4f}"
 
     def accuracy(self) -> float:
         """
@@ -111,5 +117,5 @@ class Accuracy(PerformanceMeasure):
             if self.total_pred[classname]> 0:
                 sum_+= self.correct_pred[classname] / self.total_pred[classname]
                 class_count+= 1
-        return sum_ / class_count if class_count > 0 else 0.0
+        return sum_ / class_count if class_count > 0 else 0.0 #average all accuracy per class
         
