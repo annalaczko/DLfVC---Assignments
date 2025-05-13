@@ -7,7 +7,7 @@ import os
 from tqdm import tqdm
 from pathlib import Path
 
-from assignment_1_code.models.cnn import TinyCNN
+from assignment_1_code.models.vit import MyViT
 from torchvision import models
 from torchvision.models import resnet18  # change to the model you want to test
 from assignment_1_code.models.class_model import DeepClassifier
