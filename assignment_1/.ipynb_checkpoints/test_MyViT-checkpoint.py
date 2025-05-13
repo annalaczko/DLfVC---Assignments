@@ -35,7 +35,15 @@ def test(args):
 
     num_test_data = len(test_data)
 
-    model = DeepClassifier(TinyCNN())
+    vit_model = MyViT(
+        chw=(3, 32, 32), 
+        n_patches=4, 
+        n_blocks=2,    
+        hidden_d=32,  
+        n_heads=2,  
+        out_d=10          
+    )
+    model = DeepClassifier(vit_model)
     model.to(device)
     model.load(args.path_to_trained_model)
     
@@ -81,6 +89,6 @@ if __name__ == "__main__":
     # os.environ["CUDA_VISIBLE_DEVICES"] = str(args.gpu_id)
     # args.gpu_id = 0
     
-    args.path_to_trained_model = Path(r"saved_models\model_TinyCNN.pt")
+    args.path_to_trained_model = Path(r"saved_models\model_MyViT.pt")
 
     test(args)

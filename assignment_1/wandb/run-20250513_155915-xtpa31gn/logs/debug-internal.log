@@ -1,0 +1,15 @@
+{"time":"2025-05-13T15:59:16.021977+02:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"C:\\Users\\annal\\Github\\DLfVC\\assignment_1\\wandb\\run-20250513_155915-xtpa31gn\\logs\\debug-core.log"}
+{"time":"2025-05-13T15:59:16.3157991+02:00","level":"INFO","msg":"created new stream","id":"xtpa31gn"}
+{"time":"2025-05-13T15:59:16.3157991+02:00","level":"INFO","msg":"stream: started","id":"xtpa31gn"}
+{"time":"2025-05-13T15:59:16.31646+02:00","level":"INFO","msg":"handler: started","stream_id":"xtpa31gn"}
+{"time":"2025-05-13T15:59:16.31646+02:00","level":"INFO","msg":"writer: Do: started","stream_id":"xtpa31gn"}
+{"time":"2025-05-13T15:59:16.31646+02:00","level":"INFO","msg":"sender: started","stream_id":"xtpa31gn"}
+{"time":"2025-05-13T15:59:16.7089437+02:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-05-13T18:31:59.446056+02:00","level":"INFO","msg":"stream: closing","id":"xtpa31gn"}
+{"time":"2025-05-13T18:31:59.446056+02:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-05-13T18:31:59.446056+02:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-05-13T18:32:00.231889+02:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-05-13T18:32:00.5277709+02:00","level":"INFO","msg":"handler: closed","stream_id":"xtpa31gn"}
+{"time":"2025-05-13T18:32:00.5277709+02:00","level":"INFO","msg":"sender: closed","stream_id":"xtpa31gn"}
+{"time":"2025-05-13T18:32:00.5277709+02:00","level":"INFO","msg":"writer: Close: closed","stream_id":"xtpa31gn"}
+{"time":"2025-05-13T18:32:00.5282996+02:00","level":"INFO","msg":"stream: closed","id":"xtpa31gn"}

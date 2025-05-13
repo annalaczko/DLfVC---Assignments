@@ -47,12 +47,12 @@ def train(args):
     print (f"DEVICE: {device}") #checking just in case, sometimes it does not behave
 
     vit_model = MyViT(
-        chw=(3, 32, 32),   # CIFAR-10 input shape
-        n_patches=4,       # You can adjust; 4 divides 32 evenly
-        n_blocks=2,        # Number of transformer blocks
-        hidden_d=32,       # Embedding dimension
-        n_heads=2,         # Number of attention heads
-        out_d=10           # CIFAR-10 has 10 classes
+        chw=(3, 32, 32), 
+        n_patches=4, 
+        n_blocks=2,    
+        hidden_d=32,  
+        n_heads=2,  
+        out_d=10          
     )
     model = DeepClassifier(vit_model)
     model.to(device)
@@ -103,6 +103,6 @@ if __name__ == "__main__":
     #     args = args.parse_args()
     # os.environ["CUDA_VISIBLE_DEVICES"] = str(args.gpu_id)
     # args.gpu_id = 0
-    args.num_epochs = 11
+    args.num_epochs = 30
 
     train(args)
