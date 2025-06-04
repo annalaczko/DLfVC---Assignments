@@ -1,5 +1,6 @@
 from abc import ABCMeta, abstractmethod
 import torch
+import numpy as np
 
 class PerformanceMeasure(metaclass=ABCMeta):
     '''
@@ -39,6 +40,7 @@ class SegMetrics(PerformanceMeasure):
 
     def __init__(self, classes):
         self.classes = classes
+        self.num_classes = len(self.classes)
 
         self.reset()
 
@@ -46,8 +48,9 @@ class SegMetrics(PerformanceMeasure):
         '''
         Resets the internal state.
         '''
-        ## TODO implement
-        pass
+
+        self.num_classes = len(self.classes)
+        self.confusion_matrix = torch.zeros((self.num_classes, self.num_classes), dtype=torch.int64)
 
 
 
@@ -61,8 +64,26 @@ class SegMetrics(PerformanceMeasure):
         Make sure to not include pixels of value 255 in the calculation since those are to be ignored. 
         '''
 
-       ##TODO implement
-        pass
+        if prediction.ndim != 4 or target.ndim != 3:
+            raise ValueError("Dimension is not compatible")
+
+        b, c, h, w = prediction.shape
+        if target.shape != (b, h, w):
+            raise ValueError("Shape mismatch or class mismatch between prediction and target.")
+
+        if c != len(self.classes):
+            raise ValueError(f"Class dimension is not compatible between prediction and target {c} : {self.classes}")
+
+        pred_labels = prediction.argmax(dim=1) #getting the prediction by choosing argmax
+        mask = (target != 255)  # ignoring pixels, boolean tensor
+
+        for i in range(b):
+            true = target[i][mask[i]].view(-1)
+            pred = pred_labels[i][mask[i]].view(-1)
+
+            for t, p in zip(true, pred):
+                if 0 <= t.item() < self.num_classes and 0 <= p.item() < self.num_classes:
+                    self.confusion_matrix[t.item(), p.item()] += 1
    
 
     def __str__(self):
@@ -70,8 +91,7 @@ class SegMetrics(PerformanceMeasure):
         Return a string representation of the performance, mean IoU.
         e.g. "mIou: 0.54"
         '''
-        ##TODO implement
-        pass
+        return f"Mean IoU: {self.mIoU():.2f}"
           
 
     
@@ -82,8 +102,19 @@ class SegMetrics(PerformanceMeasure):
         If the denominator for IoU calculation for one of the classes is 0,
         use 0 as IoU for this class.
         '''
-        ##TODO implement
-        pass
+        TP = torch.diag(self.confusion_matrix)
+        TP_FN = self.confusion_matrix.sum(dim=1) 
+        TP_FP = self.confusion_matrix.sum(dim=0)
+        denom = TP_FP + TP_FN - TP
+
+        ious = []
+        for i in range(self.num_classes):
+            if denom[i] == 0:
+                ious.append(0.0)
+            else:
+                ious.append(TP[i].item() / denom[i].item())
+
+        return float(np.mean(ious)) if ious else 0.0
 
 
 

@@ -5,7 +5,7 @@ import torchvision.transforms.v2 as v2
 import os
 import matplotlib.pyplot as plt
 import numpy as np
-os.chdir(os.getcwd() + "change to your working directory if necessary")
+os.chdir(os.getcwd())
 
 
 from train import OxfordPetsCustom
@@ -14,7 +14,9 @@ from train import OxfordPetsCustom
 def imshow(img, filename='img/test.png'):
     npimg = img.numpy()
     plt.imshow(np.transpose(npimg, (1, 2, 0)))
+    
     plt.imsave(filename,np.transpose(npimg, (1, 2, 0)))
+    print(f"saved as {filename}")
 
 
 if __name__ == '__main__': 
@@ -27,7 +29,7 @@ if __name__ == '__main__':
                             v2.ToDtype(torch.long, scale=False),
                             v2.Resize(size=(64,64), interpolation=v2.InterpolationMode.NEAREST)])
 
-    train_data = OxfordPetsCustom(root="change to the path were your dataset is stored", 
+    train_data = OxfordPetsCustom(root="/data/", 
                             split="trainval",
                             target_types='segmentation', 
                             transform=train_transform,
@@ -35,7 +37,7 @@ if __name__ == '__main__':
                             download=True)
     train_data_loader = torch.utils.data.DataLoader(train_data,
                                             batch_size=8,
-                                            shuffle=False,
+                                            shuffle=True,
                                             num_workers=2)
 
     # get some random training images
