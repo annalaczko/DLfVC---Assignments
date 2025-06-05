@@ -118,7 +118,7 @@ def train(args):
                     device,
                     args.num_epochs, 
                     model_save_dir,
-                    batch_size=128,
+                    batch_size=64,
                     val_frequency = val_frequency)
     trainer.train()
 
