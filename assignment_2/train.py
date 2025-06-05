@@ -65,7 +65,7 @@ def train(args):
     model = DeepSegmenter(model)
     model = model.to(device)
     
-    optimizer = torch.optim.AdamW(model.parameters(), lr=0.001, amsgrad=True, weight_decay=0.1)
+    optimizer = torch.optim.AdamW(model.parameters(), lr=0.001, amsgrad=True)
     loss_fn = torch.nn.CrossEntropyLoss()
     
     train_metric = SegMetrics(classes=train_data.classes_seg)

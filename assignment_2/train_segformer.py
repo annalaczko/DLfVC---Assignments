@@ -83,7 +83,7 @@ def train(args):
     #     encoder_weights = torch.load("saved_models/segformer_encoder_city.pth", map_location='cpu')
     #     model.net.encoder.load_state_dict(encoder_weights)
     
-    optimizer = torch.optim.AdamW(model.parameters(), lr=0.001, amsgrad=True, weight_decay=0.1)
+    optimizer = torch.optim.AdamW(model.parameters(), lr=0.001, amsgrad=True)
     if args.dataset == "city":
         loss_fn = torch.nn.CrossEntropyLoss(ignore_index=255)
     else:
@@ -98,14 +98,12 @@ def train(args):
         encoder_weights = torch.load(model_save_dir / "segformer_encoder_city.pth", map_location='cpu')
         model.net.encoder.load_state_dict(encoder_weights)
         model.net.encoder.requires_grad_(False)
-        optimizer = torch.optim.AdamW(model.net.decoder.parameters(), lr=0.001, amsgrad=True, weight_decay=0.1)
+        optimizer = torch.optim.AdamW(model.net.decoder.parameters(), lr=0.001, amsgrad=True)
 
     model.to(device)
     train_metric = SegMetrics(classes=train_data.classes_seg)
     val_metric = SegMetrics(classes=val_data.classes_seg)
-    val_frequency = 2 # for 
-
-    
+    val_frequency = 2     
 
     lr_scheduler = torch.optim.lr_scheduler.ExponentialLR(optimizer, gamma=0.98)
     
@@ -134,7 +132,7 @@ def train(args):
 
 if __name__ == "__main__":
     args = argparse.ArgumentParser(description='Training')
-    args.add_argument('-t', '--task', default='pretrain', choices=["pretrain", "finetune_a", "finetune_b"], help='Task to run')
+    args.add_argument('-t', '--task', default='pretrain', choices=["pretrain", "finetune_a", "finetune_b", "task5"], help='Task to run')
     
     if not isinstance(args, tuple):
         args = args.parse_args()
@@ -143,6 +141,5 @@ if __name__ == "__main__":
     os.environ['CUDA_VISIBLE_DEVICES'] = str(args.gpu_id)
 
     args.num_epochs = 31
-    args.dataset = "city"
 
     train(args)
