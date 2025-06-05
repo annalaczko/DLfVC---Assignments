@@ -1,3 +1,4 @@
+
 import argparse
 import os
 import torch
@@ -15,8 +16,6 @@ from dlvc.trainer import ImgSemSegTrainer
 
 
 def train(args):
-
-    torch.backends.cudnn.benchmark = True
 
     train_transform = v2.Compose([v2.ToImage(), 
                             v2.ToDtype(torch.float32, scale=True),
@@ -57,7 +56,8 @@ def train(args):
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print (f"DEVICE: {device}")
 
-    model = fcn_resnet50(weights=None)
+    model = fcn_resnet50(weights=None, weights_backbone=ResNet50_Weights.DEFAULT)
+
     model.classifier[4] = torch.nn.Conv2d(512, num_classes, kernel_size=1)
 
     

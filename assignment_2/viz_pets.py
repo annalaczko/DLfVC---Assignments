@@ -2,13 +2,13 @@ import os
 import torch
 import torchvision
 import torchvision.transforms.v2 as v2
-import os
+from pathlib import Path
 import matplotlib.pyplot as plt
 import numpy as np
 os.chdir(os.getcwd())
 
 
-from train import OxfordPetsCustom
+from train_no_weights import OxfordPetsCustom
 
 
 def imshow(img, filename='img/test.png'):
@@ -21,32 +21,40 @@ def imshow(img, filename='img/test.png'):
 
 if __name__ == '__main__': 
 
-    train_transform = v2.Compose([v2.ToImage(), 
-                            v2.ToDtype(torch.float32, scale=True),
-                            v2.Resize(size=(64,64), interpolation=v2.InterpolationMode.NEAREST)])
+    input_transform = v2.Compose([
+        v2.ToImage(), 
+        v2.ToDtype(torch.float32, scale=True),
+        v2.Resize(size=(64,64), interpolation=v2.InterpolationMode.NEAREST)
+    ])
 
-    train_transform2 = v2.Compose([v2.ToImage(), 
-                            v2.ToDtype(torch.long, scale=False),
-                            v2.Resize(size=(64,64), interpolation=v2.InterpolationMode.NEAREST)])
+    target_transform = v2.Compose([
+        v2.ToImage(), 
+        v2.ToDtype(torch.long, scale=False),
+        v2.Resize(size=(64,64), interpolation=v2.InterpolationMode.NEAREST)
+    ])
+    
+    val_data = OxfordPetsCustom(
+        root="data", 
+        split="test", 
+        target_types='segmentation', 
+        transform=input_transform,
+        target_transform=target_transform,
+        download=True
+    )
+    val_loader = torch.utils.data.DataLoader(val_data, batch_size=4, shuffle=False, num_workers=2)
 
-    train_data = OxfordPetsCustom(root="/data/", 
-                            split="trainval",
-                            target_types='segmentation', 
-                            transform=train_transform,
-                            target_transform=train_transform2,
-                            download=True)
-    train_data_loader = torch.utils.data.DataLoader(train_data,
-                                            batch_size=8,
-                                            shuffle=True,
-                                            num_workers=2)
+    model_path = Path("saved_models") / "model.pth"
+    model = torch.load(model_path)
+    model.eval()
 
-    # get some random training images
-    dataiter = iter(train_data_loader)
-    images, labels = next(dataiter)
-    images_plot = torchvision.utils.make_grid(images, nrow=4)
-    labels_plot = torchvision.utils.make_grid((labels-1)/2, nrow=4)#.to(torch.uint8)
+    with torch.no_grad():
+        images, true_masks = next(iter(val_loader))
+        outputs = model(images)
+        predicted_masks = torch.argmax(outputs, dim=1).unsqueeze(1).float()  # (B,1,H,W) a megjelenítéshez
 
-    # show/plot images
-    imshow(images_plot, filename="img/input_test_pets.png")
-    imshow(labels_plot,filename="img/seg_mask_test_pets.png")
+    input_grid = torchvision.utils.make_grid(images, nrow=4)
+    pred_mask_grid = torchvision.utils.make_grid(predicted_masks / predicted_masks.max(), nrow=4)  # normalizálva
 
+    os.makedirs("img", exist_ok=True)
+    imshow(input_grid, filename="img/val_input_images.png")
+    imshow(pred_mask_grid, filename="img/val_predicted_masks.png")
