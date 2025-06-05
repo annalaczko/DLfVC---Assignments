@@ -5,9 +5,11 @@ import torchvision.transforms.v2 as v2
 from pathlib import Path
 import matplotlib.pyplot as plt
 import numpy as np
+from torchvision.models.segmentation import fcn_resnet50
+
 os.chdir(os.getcwd())
 
-
+from dlvc.models.segment_model import DeepSegmenter
 from train_no_weights import OxfordPetsCustom
 
 
@@ -44,7 +46,12 @@ if __name__ == '__main__':
     val_loader = torch.utils.data.DataLoader(val_data, batch_size=4, shuffle=False, num_workers=2)
 
     model_path = Path("saved_models") / "model.pth"
-    model = torch.load(model_path)
+
+    model = fcn_resnet50()
+    model.load_state_dict(torch.load(model_path))  # csak a súlyokat töltjük be
+
+
+    # model = torch.load(model_path)
     model.eval()
 
     with torch.no_grad():
