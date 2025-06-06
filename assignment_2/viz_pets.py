@@ -49,7 +49,7 @@ if __name__ == '__main__':
         target_transform=target_transform,
         download=True
     )
-    val_loader = torch.utils.data.DataLoader(val_data, batch_size=4, shuffle=False, num_workers=2)
+    val_loader = torch.utils.data.DataLoader(val_data, batch_size=4, shuffle=True, num_workers=2)
 
     model_path = Path("saved_models") / "FCN_model_FCN.pth"
 
